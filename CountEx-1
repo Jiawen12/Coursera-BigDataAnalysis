@@ -1,0 +1,4 @@
+Given, val encyclopedia: RDD[String], say we want to search all of encyclopedia for mentions of EPFL, 
+and count the number of pages that mention EPFL.
+
+val result= encyclopedia.filter(page => page.contains("EPFL")).count() 
