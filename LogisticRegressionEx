@@ -1,0 +1,9 @@
+＃Logistic Regression Ex
+val points= sc.textFile(...).map(parsePoint)
+
+var w= Vector.zeros(d)
+
+for (i<- 1tonumIterations){
+  val gradient = points.map{p=>(1/(1+exp(-p.y*w.dot(p.x)))-1)*p.y*p.y}.reduce(_ +_)
+  w- = alpha*gradient
+}
